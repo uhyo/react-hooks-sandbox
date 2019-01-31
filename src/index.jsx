@@ -6,9 +6,12 @@ import { RealtimeTimer } from './custom/realtime-timer';
 import { InputTest } from './custom/01-input';
 import { UseOnUpdateTest } from './custom/02-useonupdate-after';
 import { UseTimerTest } from './custom/03-usetimer';
+import { Review } from './review';
 
 const App = () => (
   <div>
+    <Review />
+    <hr />
     <UseStateTest />
     <UseEffectTest />
     <InputTest />
