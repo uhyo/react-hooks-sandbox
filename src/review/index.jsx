@@ -27,7 +27,7 @@ export const Review = () => (
     <UseContextSample />
     <hr />
     <UseReducerSample />
-    <UseReducerSample2 initialYear={5} initialMonth={10} />
+    <UseReducerSample2 initialMonth={10} />
     <hr />
     <UseMemoSample n={1000} />
     <hr />

@@ -13,13 +13,13 @@ const reducer = ({ year, month }, action) => {
       return month === 0
         ? { year: year - 1, month: 11 }
         : { year, month: month - 1 };
-    default:
-      return {
-        year: action.year,
-        month: action.month,
-      };
   }
 };
+
+const init = initialMonth => ({
+  year: 0,
+  month: initialMonth,
+});
 
 export const UseReducerSample = () => {
   const [state, dispatch] = useReducer(reducer, {
@@ -52,19 +52,8 @@ const ControlButtons = () => {
   );
 };
 
-export const UseReducerSample2 = ({ initialYear, initialMonth }) => {
-  const [state, dispatch] = useReducer(
-    reducer,
-    {
-      year: 0,
-      month: 1,
-    },
-    {
-      type: 'reset',
-      year: initialYear,
-      month: initialMonth,
-    },
-  );
+export const UseReducerSample2 = ({ initialMonth }) => {
+  const [state, dispatch] = useReducer(reducer, initialMonth, init);
 
   return (
     <div>
